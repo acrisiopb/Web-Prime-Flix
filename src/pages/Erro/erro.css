@@ -1,0 +1,18 @@
+/*Error Not Found*/
+.ERROR{
+    display: block;
+    align-content: center;
+    text-align: center;
+    margin-top: 10%;
+
+}
+.ERROR h1{
+    font-size: 150px;
+    margin: 10px;
+}
+p{
+    margin-bottom: 8px;
+}
+a{
+    text-decoration: none;
+}

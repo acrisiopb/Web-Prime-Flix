@@ -7,6 +7,8 @@ function Home() {
     // `setFilmes` é a função usada para atualizar o estado.
     const [filmes, setFilmes] = useState([]);
 
+    const [loading, setLoading] = useState(true);
+
     // `useEffect` é usado para carregar os filmes da API assim que o componente for montado.
     useEffect(() => {
         // Função assíncrona para buscar os dados da API.
@@ -26,8 +28,7 @@ function Home() {
             // Exibe os resultados recebidos da API no console do navegador.
             //console.log(response.data.results.slice(0,10));
             setFilmes((response.data.results.slice(0,10)));
-
-          
+             setLoading(false);          
         }
 
         // Chama a função que carrega os filmes.
@@ -37,6 +38,13 @@ function Home() {
         // quando o componente for montado.
     }, []);
 
+    if(loading){
+        return(
+            <div className="loading">
+                <img src={'https://cdn.dribbble.com/users/4241225/screenshots/14521747/loading_gif_1_1.gif'} alt={'Carregando..'}/>
+            </div>
+        )
+    }
     return (
         <div className="container">
             <div className="lista-filmes">
