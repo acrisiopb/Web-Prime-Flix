@@ -1,1 +1,2 @@
 1 - comando: npm install axios : Axios é uma biblioteca JavaScript que facilita a realização de requisições HTTP (como GET, POST, PUT, DELETE, etc.) para interagir com APIs externas ou servidores. Ele é baseado em Promises, o que o torna ideal para trabalhar com operações assíncronas.
+2 - React-toastify : comando: npm install --save react-toastify
