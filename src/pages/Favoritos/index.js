@@ -1,48 +1,81 @@
+// Importa os hooks 'useEffect' e 'useState' do React para manipular o estado e os efeitos do componente
 import { useEffect, useState } from 'react';
+
+// Importa o arquivo de estilo CSS específico para o componente
 import './favoritos.css';
+
+// Importa o componente 'Link' do React Router para navegação entre páginas
 import { Link } from 'react-router-dom';
-import {toast} from 'react-toastify';
+
+// Importa a biblioteca 'react-toastify' para exibir notificações toast
+import { toast } from 'react-toastify';
+
+// Importa o ícone 'GoX' da biblioteca 'react-icons' para representar o botão de excluir
 import { GoX } from "react-icons/go";
-function Favoritos(){
+
+// Define o componente funcional Favoritos
+function Favoritos() {
+    // Declara um estado 'filmes' que armazena a lista de filmes favoritos do usuário
     const [filmes, setFilmes] = useState([]);
-    
-    useEffect(()=>{
-        const minhaLsta = localStorage.getItem("@primeflix");
-        setFilmes(JSON.parse(minhaLsta) || []);
 
-    },[]);
+    // Hook useEffect que será executado apenas na montagem do componente (array de dependências vazio)
+    useEffect(() => {
+        // Obtém a lista de filmes salva no localStorage
+        const minhaLista = localStorage.getItem("@primeflix");
+        // Atualiza o estado com os filmes salvos ou com um array vazio se não houver filmes
+        setFilmes(JSON.parse(minhaLista) || []);
+    }, []);
 
-    function excluirFilme (id){
-       let filtroFilmes = filmes.filter((filme)=>{
-        return(filme.id !== id);
-       })
+    // Função para excluir um filme da lista
+    function excluirFilme(id) {
+        // Filtra a lista de filmes, removendo o filme cujo ID foi passado como argumento
+        let filtroFilmes = filmes.filter((filme) => {
+            return (filme.id !== id);
+        });
 
-       setFilmes(filtroFilmes);
-       toast.success("Filme excluido da sua lista");
-       localStorage.setItem("@primeflix", JSON.stringify(filtroFilmes));
+        // Atualiza o estado com a lista filtrada
+        setFilmes(filtroFilmes);
+
+        // Exibe uma notificação de sucesso
+        toast.success("Filme excluído da sua lista");
+
+        // Atualiza o localStorage com a lista atualizada
+        localStorage.setItem("@primeflix", JSON.stringify(filtroFilmes));
     }
 
-    return(
-     <div className="meus-filmes">
-        <h1>Meus Filmes</h1>
-        {filmes.length === 0 && <span>Você não possui nenhum filme salvo</span>}
-        <ul className='molder'>
-            {filmes.map((filme) =>{
-             return(
-                <li key={filme.id}>
-                    <span>{filme.title}</span>
-                    <div>
-                     <Link to={`/filme/${filme.id}`}>Ver detalhes</Link>
-                     <button onClick={() => excluirFilme(filme.id)}> 
-                     <GoX size={20} color='red' className='gox' />
-                     </button>
-                    </div>
-                </li>
-             )
-            })}
-        </ul>
-     </div>
+    // Renderiza o componente
+    return (
+        <div className="meus-filmes">
+            {/* Título da página */}
+            <h1>Meus Filmes</h1>
+
+            {/* Exibe uma mensagem caso a lista de filmes esteja vazia */}
+            {filmes.length === 0 && <span>Você não possui nenhum filme salvo</span>}
+
+            {/* Lista de filmes salvos */}
+            <ul className='molder'>
+                {filmes.map((filme) => {
+                    return (
+                        <li key={filme.id}>
+                            {/* Nome do filme */}
+                            <span>{filme.title}</span>
+                            <div>
+                                {/* Link para ver os detalhes do filme */}
+                                <Link to={`/filme/${filme.id}`}>Ver detalhes</Link>
+
+                                {/* Botão para excluir o filme da lista */}
+                                <button onClick={() => excluirFilme(filme.id)}>
+                                    {/* Ícone de exclusão */}
+                                    <GoX size={20} color='red' className='gox' />
+                                </button>
+                            </div>
+                        </li>
+                    );
+                })}
+            </ul>
+        </div>
     );
 }
 
+// Exporta o componente Favoritos para uso em outros arquivos
 export default Favoritos;

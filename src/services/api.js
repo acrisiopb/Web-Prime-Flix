@@ -3,7 +3,11 @@
 
 import axios from "axios";
 
+// Cria uma instância do Axios com uma configuração inicial
 const api = axios.create({
+    // Define a URL base para todas as requisições feitas através desta instância
     baseURL: 'https://api.themoviedb.org/3/'
 });
+
+// Exporta a instância configurada do Axios para ser utilizada em outros arquivos do projeto
 export default api;
