@@ -1,21 +1,13 @@
 <h1> Projeto | Criação de um Web site em REACT - consumindo uma API de Filmes. </h1>
+
+
 <div style="display: inline_block">
     <h6>Tecnologias - utilizadas</h6>
     <img align="center" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="Badge HTML 5">
     <img align="center" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="Badge CSS">
     <img align="center" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Badge BootStrap">
 </div>
-
 </br>
-
-<div style="display: inline_block">
-    <h6>Prévias</h6>
-    <img align="center" src="https://github.com/acrisiopb/Web-Prime-Flix/blob/main/Dev%20Art/1.png" alt="Prévia">
-    <img align="center" src="https://github.com/acrisiopb/Web-Prime-Flix/blob/main/Dev%20Art/2.png" alt="Prévia">
-    <img align="center" src="https://github.com/acrisiopb/Web-Prime-Flix/blob/main/Dev%20Art/3.png" alt="Prévia">
-</div>
-
-
 <h4>Scripts Disponíveis</h4>
 <p>No diretório do projeto, você pode executar:</p>
 <h4>npm install</h4>
@@ -27,3 +19,15 @@ Abra http://localhost:3000 para visualizá-lo no seu navegador.
 
 A página será recarregada quando você fizer alterações.
 Você também pode ver erros de lint no console.</p>
+
+</br>
+
+<div style="display: inline_block">
+    <h6>Prévias</h6>
+    <img align="center" src="https://github.com/acrisiopb/Web-Prime-Flix/blob/main/Dev%20Art/1.png" alt="Prévia">
+    <img align="center" src="https://github.com/acrisiopb/Web-Prime-Flix/blob/main/Dev%20Art/2.png" alt="Prévia">
+    <img align="center" src="https://github.com/acrisiopb/Web-Prime-Flix/blob/main/Dev%20Art/3.png" alt="Prévia">
+</div>
+
+
+
