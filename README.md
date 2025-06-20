@@ -1,6 +1,6 @@
 <h1> Projeto | Criação de um Web site em REACT - consumindo uma API de Filmes. </h1>
 
-
+<h6>LINK -> <a href=" https://web-prime-flix-1gk11abc6-acrisiopbs-projects.vercel.app/">  <img align="center" width="40" style="object-fit: contain;" src="#"</a> WEB - PRIME - FLIX  </h6>
 <div style="display: inline_block">
     <h6>Tecnologias - utilizadas</h6>
     <img align="center" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="Badge HTML 5">
