@@ -11,8 +11,7 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 // Importa o ícone 'GoX' da biblioteca 'react-icons' para representar o botão de excluir
-import { GoX } from "react-icons/go";
-
+import { AiFillStop } from "react-icons/ai";
 // Define o componente funcional Favoritos
 function Favoritos() {
     // Declara um estado 'filmes' que armazena a lista de filmes favoritos do usuário
@@ -47,7 +46,7 @@ function Favoritos() {
     return (
         <div className="meus-filmes">
             {/* Título da página */}
-            <h1>Meus Filmes</h1>
+            <h1>Meus Favoritos</h1>
 
             {/* Exibe uma mensagem caso a lista de filmes esteja vazia */}
             {filmes.length === 0 && <span>Você não possui nenhum filme salvo</span>}
@@ -58,18 +57,20 @@ function Favoritos() {
                     return (
                         <li key={filme.id}>
                             {/* Nome do filme */}
+                            <img className='img' src={`https://image.tmdb.org/t/p/original/${filme.backdrop_path}`} alt={filme.title} />
                             <span>{filme.title}</span>
-                            <div>
+                            <div className='detalhes'>
                                 {/* Link para ver os detalhes do filme */}
                                 <Link to={`/filme/${filme.id}`}>Ver detalhes</Link>
 
-                                {/* Botão para excluir o filme da lista */}
-                                <button onClick={() => excluirFilme(filme.id)}>
-                                    {/* Ícone de exclusão */}
-                                    <GoX size={20} color='red' className='gox' />
-                                </button>
                             </div>
+                            {/* Botão para excluir o filme da lista */}
+                            <button className='button' onClick={() => excluirFilme(filme.id)}>
+                                {/* Ícone de exclusão */}
+                               <AiFillStop  color='white' size="20" />
+                            </button>
                         </li>
+
                     );
                 })}
             </ul>

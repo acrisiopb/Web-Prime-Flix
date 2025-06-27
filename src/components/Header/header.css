@@ -1,26 +1,37 @@
-header{
+header {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
     height: 60px;
-    background-color: #000000;
+    background-color: #1E2630;
 
 }
 
-.logo{
+.logo {
     text-decoration: none;
     font-size: 30px;
     cursor: pointer;
-    color: #FFF;
+    color: #9646ff;
     font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 4px;
 }
 
-.favoritos{
+.favoritos {
     cursor: pointer;
-    background-color: #FFF;
-    padding: 5px 14px;
+    padding: 15px 10px;
     text-decoration: none;
-    color: #000000;
+    color: #8996a1;
     border-radius: 4px;
 }
+
+.favoritos:hover {
+
+    color: #FFF;
+    transition: 1s;
+
+}
+
+
+
